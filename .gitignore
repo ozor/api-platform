@@ -27,6 +27,11 @@
 /app/spool/*
 /app/bootstrap.php.cache
 /var/bootstrap.php.cache
+!/app/var/cache
+/app/var/cache/*
+!/app/var/cache/.gitkeep
+!/app/var/logs
+/app/var/logs/*
 
 *~
 /.idea/
