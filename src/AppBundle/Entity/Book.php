@@ -4,6 +4,7 @@ namespace AppBundle\Entity;
 
 use ApiPlatform\Core\Annotation\ApiResource;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * A book.
@@ -26,6 +27,7 @@ class Book
      * @var string|null The ISBN number if this book (or null if doesn't have one).
      *
      * @ORM\Column(nullable=true)
+     * @Assert\Isbn
      */
     private $isbn;
 
@@ -33,6 +35,7 @@ class Book
      * @var string The title of this book.
      *
      * @ORM\Column
+     * @Assert\NotBlank
      */
     private $title;
 
@@ -40,6 +43,7 @@ class Book
      * @var string The description of this book.
      *
      * @ORM\Column(type="text")
+     * @Assert\NotBlank
      */
     private $description;
 
@@ -47,6 +51,7 @@ class Book
      * @var string The author of this book.
      *
      * @ORM\Column
+     * @Assert\NotBlank
      */
     private $author;
 
@@ -54,6 +59,7 @@ class Book
      * @var \DateTimeInterface The publication date of this book.
      *
      * @ORM\Column(type="datetime")
+     * @Assert\NotNull
      */
     private $publicationDate;
 
